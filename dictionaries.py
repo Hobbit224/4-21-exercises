@@ -76,8 +76,32 @@ def word_histogram(paragraph):
 	print word_summary
 
 word_histogram('to be or not to be')
+print '\n'
 
 
+####Bonus Problem####
+print 'Bonus Problem\n'
+
+def most_common_words(runon):
+	werd_list = runon.split(' ')
+	werd_summary = {}
+	for element in werd_list:
+		if element in werd_summary:
+			werd_summary[element] += 1
+		else: 
+			werd_summary[element] = 1
+
+	presort_runon = []
+
+	for j in werd_summary:
+		presort_runon.append([werd_summary[j], j])
+
+	sorted_runon = sorted(presort_runon)
+	reversed_runon=sorted_runon[::-1]
+	print reversed_runon
+
+most_common_words('How now brown cow now how you bow bow bow brown cow')
+	
 
 
 
